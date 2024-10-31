@@ -1,0 +1,131 @@
+/*** Book processes ***/
+.bookprocess {
+    --bp-col-darker: hsl(5, 58%, 20%);
+    --bp-col-dark: hsl(5, 50%, 40%);
+    --bp-col-middle: hsl(5, 63%, 56%);
+    --bp-col-light: hsl(5, 30%, 75%);
+    --bp-col-lighter: hsl(5, 15%, 90%);
+}
+
+
+/*** Online booking, buy voucher, contact forms ***/
+:is(.recras-onlinebooking, .recras-buy-voucher, .recras-contact) {
+    accent-color: hsl(5, 63%, 56%);
+}
+:is(.recras-onlinebooking, .recras-contact) :is(input, select, button, textarea) {
+    font: inherit;
+    height: auto;
+    padding: 0.5em;
+}
+:is(.recras-onlinebooking, .recras-contact) :is(input, select, button) {
+    line-height: 1;
+}
+:is(.recras-onlinebooking, .recras-contact) textarea {
+    line-height: 1.25;
+}
+
+:is(.recras-onlinebooking, .recras-buy-voucher, .recras-contact) :is(input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), select, textarea) {
+    background: #fff;
+    border: 1px solid hsl(5, 63%, 56%);
+    width: 100%;
+}
+:is(.recras-onlinebooking, .recras-buy-voucher, .recras-contact) :is(button, input[type="submit"]) {
+    background: hsl(5, 63%, 56%);
+    border: 1px solid hsl(5, 63%, 56%);
+    color: white;
+    text-transform: uppercase;
+}
+:is(.recras-onlinebooking, .recras-buy-voucher, .recras-contact) :is(button, input[type="submit"]):is(:hover, :active) {
+    background-color: hsl(5, 63%, 68%);
+}
+:is(.recras-onlinebooking, .recras-buy-voucher, .recras-contact) :is(button, input)[type="submit"] {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 0.5em;
+    padding: 0.5em 1em;
+}
+
+.recras-onlinebooking h3 {
+    background: hsl(5, 63%, 56%);
+    color: white;
+    font-size: 1.5em;
+    font-weight: 400;
+    grid-column: 1 / 3;
+    letter-spacing: normal;
+    margin: 0;
+    padding: 1rem;
+}
+
+.recras-amountsform > div:first-of-type {
+    margin-top: 1rem;
+}
+
+.recras-onlinebooking > *:not(.recrasLoadingIndicator) {
+    border-top: none !important;
+    /*padding: 0 !important;*/
+}
+.recras-onlinebooking > * + * {
+    margin-top: 2em;
+}
+p:empty {
+    margin: 0;
+}
+.recras-contactform input:not([type="checkbox"]):not([type="radio"]), .recras-contactform select, .recras-contactform textarea {
+    max-width: 22em;
+}
+.recras-onlinebooking input[type="checkbox"], .recras-onlinebooking input[type="radio"] {
+    margin-right: 0.5em;
+}
+
+.recras-amountsform {
+    padding: 0 0 1.5rem 0 !important;
+}
+.recras-amountsform input {
+    width: 8em;
+}
+.recras-amountsform p {
+    padding: 0;
+}
+.recras-onlinebooking > div.recras-datetime,
+.recras-contactform > div {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 12em;
+}
+
+@container (width > 640px) {
+    .recras-discounts button, .recras-discounts button {
+        margin-left: 0.5em;
+    }
+}
+.recras-onlinebooking-date, .recras-onlinebooking-time {
+    width: 200px;
+}
+.recras-datetime .recrasLoadingIndicator {
+    height: 1em;
+    margin-left: 0.5em;
+    width: 1em;
+}
+
+.recras-discounts {
+    margin-top: 0;
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+}
+.standard-attachments p {
+    margin-bottom: 0.5em;
+}
+
+.recras-contactform-required::after {
+    color: hsl(5, 63%, 56%);
+}
+
+
+
+/* Chrome/Safari Mac fixes */
+.recras-onlinebooking input[disabled] {
+    background: white !important;
+}
+.recras-onlinebooking select {
+    border-radius: 0;
+}

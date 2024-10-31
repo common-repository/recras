@@ -1,0 +1,31 @@
+{
+    "name": "recras/recras-wordpress-plugin",
+    "type": "wordpress-plugin",
+    "keywords": ["WordPress", "Recras"],
+    "license": "MIT",
+    "support": {
+        "email": "support@recras.nl",
+        "wiki": "https://www.recras.nl/en/koppeling/wordpress/"
+    },
+    "require": {
+        "ext-ctype": "*",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "9.6.20",
+        "wp-cli/wp-cli": "2.10.0"
+    },
+    "authors": [
+        {
+            "name": "Sander de Jong",
+            "email": "sander@recras.nl"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Recras\\": "src"
+        }
+    }
+}

@@ -1,0 +1,84 @@
+.recras-onlinebooking img {
+    height: auto;
+    max-height: 50vh;
+    max-width: 100%;
+}
+
+.recras-datetime {
+    grid-template-columns: 1fr 12em;
+}
+.recras-onlinebooking ul {
+    margin-top: 0.5em;
+}
+
+:is(.recras-onlinebooking, .recras-contact, .recras-discounts) :is(input:not([type="checkbox"]):not([type="radio"]), select, textarea) {
+    font: inherit;
+}
+.priceWithoutDiscount, .priceWithDiscount {
+    font-weight: bold;
+}
+
+.recras-onlinebooking > *:not(:first-child) + * {
+    border-top: 2px solid #d0d0d0;
+}
+
+
+/*** Book processes ***/
+.bookprocess input:invalid:not([value='']) {
+    border-color: #c00;
+}
+
+@media (hover) {
+    .recras-package .radioWrapper > input + label:hover::after,
+    .recras-product_with_time .checkboxWrapper > input + label:hover::after,
+    .recras-product_without_time > div input + label:hover::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath fill='%23fff' d='M368 224H224V80c0-8.84-7.16-16-16-16h-32c-8.84 0-16 7.16-16 16v144H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h144v144c0 8.84 7.16 16 16 16h32c8.84 0 16-7.16 16-16V288h144c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16z'%3E%3C/path%3E%3C/svg%3E%0A");
+    }
+    .recras-package .radioWrapper > input:checked + label:hover::after,
+    .recras-product_with_time .checkboxWrapper > input:checked + label:hover::after,
+    .recras-product_without_time > div input:checked + label:hover::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath fill='%23fff' d='M368 224H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h352c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16z'%3E%3C/path%3E%3C/svg%3E%0A");
+    }
+}
+
+.recras-product_with_time > div > div input:disabled + label,
+.recras-product_without_time > div input:disabled + label {
+    border-color: #aaa;
+    background-color: #aaa;
+    color: #888;
+}
+
+.numberWithPlusMinus input {
+    background-color: #fff;
+    border-color: hsl(140, 0%, 30%);
+}
+.numberWithPlusMinus input:disabled {
+    background-color: #aaa;
+    border-color: #aaa;
+}
+.numberWithPlusMinus button {
+    background-color: hsl(140, 0%, 30%);
+    color: #fff;
+}
+.numberWithPlusMinus input[value=''],
+.numberWithPlusMinus input[value='0'] {
+    border-color: hsl(140, 0%, 80%);
+}
+.numberWithPlusMinus input[value=''] ~ button,
+.numberWithPlusMinus input[value='0'] ~ button {
+    background-color: hsl(140, 0%, 80%);
+    color: #000;
+}
+.numberWithPlusMinus input:placeholder-shown ~ button {
+    background-color: hsl(140, 0%, 80%);
+    color: #000;
+}
+@media (hover) {
+    .numberWithPlusMinus button:hover {
+        background-color: hsl(
+                120,
+                0%,
+                40%
+        ) !important; /* Important to override styles for empty value */
+    }
+}

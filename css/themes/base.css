@@ -1,0 +1,87 @@
+/* This file is used by all themes */
+
+:is(.recras-onlinebooking, .recras-contact) * {
+    box-sizing: border-box;
+}
+
+/*** BOOK PROCESSES ***/
+.bookprocess .react-datepicker__navigation {
+    display: flex; /* Fix Elementor overriding this to block */
+}
+.bookprocess .react-datepicker__day--today::after {
+    content: unset; /* Circle around today is confusing, people might think that day is selected */
+}
+
+/*** ONLINE BOOKING ***/
+.recras-contactform-required::after {
+    content: '*';
+    cursor: help;
+    margin-left: 0.125em;
+}
+
+.recras-onlinebooking button:not(:disabled) {
+    cursor: pointer;
+}
+.recras-onlinebooking button:disabled {
+    cursor: not-allowed;
+}
+.recras-price, .priceSubtotal {
+    text-align: right;
+}
+
+.recras-product-dependency, .maximum-amount, .minimum-amount, .booking-error {
+    color: #a00;
+    display: block;
+}
+input[type].recras-input-invalid {
+    border-color: #a00;
+}
+.error {
+    background: hsl(0, 100%, 96%);
+    border: 1px solid currentColor;
+    border-radius: 4px;
+    color: hsl(0, 100%, 33%);
+}
+
+.price-information {
+    color: #444;
+    font-size: 0.9em;
+}
+
+.recras-onlinebooking {
+    container-type: inline-size;
+}
+@container (width <= 640px) {
+    .recras-amountsform > div {
+        grid-template-columns: 1fr 7em;
+    }
+    .recras-amountsform > div > div:first-child {
+        grid-column: 1 / 3;
+    }
+    .recras-contactform > div,
+    .recras-discounts > div {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/*** CONTACT FORMS ***/
+.recras-contact label {
+    display: block;
+}
+.recras-contact ol {
+    list-style: none;
+    padding-left: 0;
+}
+.recras-contact dd {
+    margin-left: 0;
+}
+.recras-contact :is(dd + dt, li + li) {
+    margin-top: 0.5em;
+}
+.recras-contact td {
+    vertical-align: top;
+}
+.recras-contact :is(input[type="checkbox"], input[type="radio"]) {
+    margin-right: 0.5em;
+}
